@@ -20,7 +20,7 @@ func usage(errmsg string) {
 		"%s\n\n"+
 			"usage: %s <command>\n"+
 			"       where <command> is one of\n"+
-			"       install, remove, debug, start, stop, pause or continue.\n",
+			"       install, remove, debug, start, stop, restart, pause or continue.\n",
 		errmsg, os.Args[0])
 	os.Exit(2)
 }
@@ -56,6 +56,9 @@ func main() {
 		err = controlService(svcName, svc.Pause, svc.Paused)
 	case "continue":
 		err = controlService(svcName, svc.Continue, svc.Running)
+	case "restart":
+		err = controlService(svcName, svc.Stop, svc.Stopped)
+		err = startService(svcName)
 	default:
 		usage(fmt.Sprintf("invalid command %s", cmd))
 	}
