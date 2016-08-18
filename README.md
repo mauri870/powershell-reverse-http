@@ -15,6 +15,11 @@ go get golang.org/x/sys/windows
 go build -o powershell-reverse.exe
 ```
 
+To build on a linux machine, you need set the GOOS env to "windows"
+```
+env GOOS=windows go build -o powershell-reverse.exe
+```
+
 ## Usage
 ```
 powershell-reverse.exe
