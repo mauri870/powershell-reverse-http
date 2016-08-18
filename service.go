@@ -27,7 +27,7 @@ loop:
 		select {
 		case <-tick:
 			exploit()
-			elog.Info(1, "exploit")
+			elog.Info(1, fmt.Sprintf("Tick %v", time.Now()))
 		case c := <-r:
 			switch c.Cmd {
 			case svc.Interrogate:
