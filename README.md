@@ -21,7 +21,7 @@ no command specified
 
 usage: powershell-reverse.exe <command>
        where <command> is one of
-       install, remove, debug, start, stop, pause or continue.
+       install, remove, debug, start, stop, restart, pause or continue.
 ```
 
 After install and start, the service is always up and trying to connect on host and port specified on `exploit.go`
