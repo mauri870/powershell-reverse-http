@@ -11,6 +11,7 @@ Change the LHOST and LPORT on `exploit.go` (metasploit handler ip and port)
 ```
 git clone https://github.com/mauri870/powershell-reverse-http.git
 cd powershell-reverse-http
+go get golang.org/x/sys/windows
 go build -o powershell-reverse.exe
 ```
 
