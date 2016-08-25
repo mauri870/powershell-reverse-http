@@ -2,7 +2,7 @@
 
 > Note: Use this program at your own risk. I do not encourage in any way the use of this software illegally or to attack targets without their previous authorization
 
-A simple windows service running on background that connects with a meterpreter session via http, with no virus signature, keeping the connection open and renewed automagically
+A simple windows service running on background that connects with a meterpreter session via http  with no virus signature
 
 ### Usage
 First, you need [go](https://golang.org/dl/) for build the binary (duh!) and [metasploit-framework](https://github.com/rapid7/metasploit-framework) for accepts the reverse connection
@@ -11,7 +11,13 @@ Change the LHOST and LPORT on `exploit.go` (metasploit handler ip and port)
 ```
 git clone https://github.com/mauri870/powershell-reverse-http.git
 cd powershell-reverse-http
+go get golang.org/x/sys/windows
 go build -o powershell-reverse.exe
+```
+
+To build on a linux machine, you need set the GOOS env to "windows"
+```
+env GOOS=windows go build -o powershell-reverse.exe
 ```
 
 ## Usage
