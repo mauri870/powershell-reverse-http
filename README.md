@@ -2,10 +2,12 @@
 
 > Note: Use this program at your own risk. I do not encourage in any way the use of this software illegally or to attack targets without their previous authorization
 
-A simple windows service running on background that connects with a meterpreter session via http  with no virus signature
+> Meterpreter-like backdoors are a pretty common attack vector and most decent antiviruses detect this behavior as a virus.
+
+A simple windows service running on background that connects with a meterpreter session via http.
 
 ### Usage
-First, you need [go](https://golang.org/dl/) for build the binary (duh!) and [metasploit-framework](https://github.com/rapid7/metasploit-framework) for accepts the reverse connection
+First, you need [go](https://golang.org/dl/) for build the binary (duh!) and [metasploit-framework](https://github.com/rapid7/metasploit-framework) to accept the reverse connection:
 
 ```
 git clone https://github.com/mauri870/powershell-reverse-http.git
@@ -28,7 +30,7 @@ usage: powershell-reverse.exe <command>
 
 After install and start, the service is always up and trying to connect on host and port specified on `exploit.go`
 
-On the attacker machine:
+On the attacker's machine:
 
 ```
 ./msfconsole --quiet
